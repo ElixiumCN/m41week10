@@ -25,3 +25,34 @@ function App() {
 }
 
 export default App;
+
+
+{/* 
+return (
+    <div className="App">
+    <input onChange={(event) => setUser(event.target.value)}/>
+    <input onChange={(event) => setAge(event.target.value)}/>
+    {user ? <div>
+        <h1>Harry Potter</h1>
+    <Box name="George Weasley" age="17" />
+    <Box name="Hermione Grainger" age="15" />
+    <Box name="Rubeus Hagrid" age="47" />
+    <Box name={user} age={age} />
+    </div>
+    :<div>
+        <h1>This is the else part of the statement</h1>
+        </div>}
+    </div>
+);
+} */}
+
+// for (let i=0; i< array.length; i++) 
+//     console.log(array[i])
+
+
+// map function is identical to a for loop for arrays
+// map function is easier than for loops in React
+
+
+
+
