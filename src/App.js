@@ -5,6 +5,8 @@ import Home from "./pages/Homecats";
 import Cats from "./pages/Cats";
 import Checkout from "./pages/Checkout";
 // import Header from './pages/Components/Sidebar';
+// import form
+import Register from "./pages/Components/Register";
 
 function clicker() {
     console.log("hello");
@@ -15,11 +17,17 @@ function clicker() {
 
 const App = () => {
 
-    <div></div>
+    <div>
+
+    </div>
 
     return (
         
         <div>
+            <h1>Register</h1>
+            <Register />
+
+
             <BrowserRouter>
 {/* <Navbar /> */}
 
