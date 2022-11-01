@@ -8,6 +8,7 @@ import Checkout from "./pages/Checkout";
 // import form
 import {useState} from 'react'
 import Register from "./pages/Components/Register";
+import ReadUsers from "./pages/Components/ReadUsers";
 
 function clicker() {
     console.log("hello");
@@ -25,11 +26,18 @@ const App = () => {
         <div>
             <h1>Register</h1>
             <Register setter={setUser} />
+            <ReadUsers />
+
             {/* conditional rendering */}
             {user ?
+            <div>
                 <h2>Hello welcome {user}</h2>
-                : <h2>Please login</h2>
+                {/* <ReadUsers /> */}
+            </div>
+                : 
+                <h2>Please login</h2>
             }
+            
 
             <BrowserRouter>
 {/* <Navbar /> */}
@@ -53,7 +61,7 @@ const App = () => {
         </div>
     );
 
-}
+};
 
 
 

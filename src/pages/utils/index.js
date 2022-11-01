@@ -17,3 +17,21 @@ export const regUser = async (username, email, password, setter) => {
         console.log(error)
     }
 }
+
+export const readUsers = async () => {
+    try {
+        const response = await fetch("http://localhost:5001/readUser", {
+            method: "GET",
+            headers: {"Content-Type": "application/json"}
+    })
+    const data = await response.json()
+    console.log(data.user)
+    const usernames = data.user.map(users => users.usernames)
+    return usernames    
+
+} catch (error) {
+        console.log(error)
+    }
+}
+
+//TODO: add delete and update fetch requests
