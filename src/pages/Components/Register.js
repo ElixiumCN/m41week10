@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react"
+import { regUser } from '../utils'
 
 const Register = ({setter}) => {
     const [username, setUsername] = useState()
@@ -8,9 +9,10 @@ const Register = ({setter}) => {
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        console.log(username)
-        console.log(email)
-        console.log(password)
+        await regUser(username, email, password, setter)
+        // console.log(username)
+        // console.log(email)
+        // console.log(password)
     }
 
     return (

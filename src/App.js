@@ -6,6 +6,7 @@ import Cats from "./pages/Cats";
 import Checkout from "./pages/Checkout";
 // import Header from './pages/Components/Sidebar';
 // import form
+import {useState} from 'react'
 import Register from "./pages/Components/Register";
 
 function clicker() {
@@ -16,17 +17,19 @@ function clicker() {
     clicker();
 
 const App = () => {
-
-    <div>
-
-    </div>
+    const [user, setUser] = useState()
+    
 
     return (
         
         <div>
             <h1>Register</h1>
-            <Register />
-
+            <Register setter={setUser} />
+            {/* conditional rendering */}
+            {user ?
+                <h2>Hello welcome {user}</h2>
+                : <h2>Please login</h2>
+            }
 
             <BrowserRouter>
 {/* <Navbar /> */}
