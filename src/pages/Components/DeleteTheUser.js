@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react"
-import { regUser } from '../utils'
+import { userdelete } from '../utils'
 
-const Register = ({setter}) => {
+const DeleteTheUser = ({setter}) => {
     const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        await regUser(username, email, password, setter)
+        await userdelete(username, email, password, setter)
         // console.log(username)
         // console.log(email)
         // console.log(password)
@@ -32,10 +32,9 @@ const Register = ({setter}) => {
             </label>
             <br></br>
 
-            <button type="submit">Click here to register</button>
+            <button type="submit">Click here to delete your account</button>
         </form>
     )
 }
 
-
-export default Register
+export default DeleteTheUser

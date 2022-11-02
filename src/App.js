@@ -8,7 +8,9 @@ import Checkout from "./pages/Checkout";
 // import form
 import {useState} from 'react'
 import Register from "./pages/Components/Register";
+import DeleteTheUser from "./pages/Components/DeleteTheUser";
 import ReadUsers from "./pages/Components/ReadUsers";
+import Login from "./pages/Components/Login";
 
 function clicker() {
     console.log("hello");
@@ -24,8 +26,10 @@ const App = () => {
     return (
         
         <div>
-            <h1>Register</h1>
+            <h1>Account management</h1>
             <Register setter={setUser} />
+            <Login setter={setUser} />
+            <DeleteTheUser setter={setUser} />
             <ReadUsers />
 
             {/* conditional rendering */}
