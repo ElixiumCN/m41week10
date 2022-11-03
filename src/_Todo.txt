@@ -1,0 +1,12 @@
+
+
+TESTS
+
+[] Register
+[x] Login 
+[x] Update username
+[] Update password 123 > 1234
+    Updating password crashed the server, I restarted the server & I'm getting CORS errors when I try to do anything.
+    The password record did update in the mongodb db object though.
+
+[x] Update email
