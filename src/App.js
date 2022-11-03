@@ -11,6 +11,8 @@ import Register from "./pages/Components/Register";
 import DeleteTheUser from "./pages/Components/DeleteTheUser";
 import ReadUsers from "./pages/Components/ReadUsers";
 import Login from "./pages/Components/Login";
+import UpdateUser from "./pages/Components/UpdateUser";
+import DeleteUser from "./pages/Components/DeleteUser";
 
 function clicker() {
     console.log("hello");
@@ -32,11 +34,20 @@ const App = () => {
             <DeleteTheUser setter={setUser} />
             <ReadUsers />
 
+
+
             {/* conditional rendering */}
             {user ?
             <div>
+                {/* tested: Register new user and then the update user form appears 
+                test next: login & update user form appears
+                */
+                }
                 <h2>Hello welcome {user}</h2>
                 {/* <ReadUsers /> */}
+                <UpdateUser user={user}/>
+                <DeleteUser user={user}/>
+
             </div>
                 : 
                 <h2>Please login</h2>
