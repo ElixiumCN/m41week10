@@ -10,9 +10,13 @@ import {useState} from 'react'
 import Register from "./pages/Components/Register";
 import DeleteTheUser from "./pages/Components/DeleteTheUser";
 import ReadUsers from "./pages/Components/ReadUsers";
-import Login from "./pages/Components/Login";
+// import Login from "./pages/Components/Login";
 import UpdateUser from "./pages/Components/UpdateUser";
 import DeleteUser from "./pages/Components/DeleteUser";
+import Login from "./pages/Components/Login";
+import { getCookie } from "./pages/common"
+import {findUser} from "./pages/common"
+import { useRef } from "react";
 
 function clicker() {
     console.log("hello");
@@ -24,6 +28,18 @@ function clicker() {
 const App = () => {
     const [user, setUser] = useState()
     
+    useEffect(() =>{
+        let cookie = getCookie("jwt_token")
+        if (cookie) !== false) {
+            loginWithToken(cookie)
+        }
+    },[])
+
+const loginWithToken = async(cookie)=> {
+    const user = await findUser(cookie)
+    setUser(user)
+}
+
 
     return (
         

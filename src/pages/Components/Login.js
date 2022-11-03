@@ -1,6 +1,6 @@
-import React from 'react' 
-import { useState } from "react";
-import { login } from '../utils';
+import React from "react";
+import { useState } from "react"
+import { loginUser } from '../utils';
 
 const Login = ({setter}) => {
     const [username, setUsername] = useState()
@@ -9,26 +9,26 @@ const Login = ({setter}) => {
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        await login(username, email, password, setter)
+        await loginUser(username, email, password, setter)
     }
 
     return (
-        <form className ="form" onSubmit ={submitHandler}>
-            <label className ="formLabel"> Username:<br></br>
-                <input onChange={(event) => setUsername(event.target.value)} />
+        <form onSubmit = {submitHandler}>
+            <label>Username:
+                <input onChange={(event)=> setUsername(event.target.value)} />
             </label>
             <br></br>
 
-            <label> Email:<br></br>
-                <input onChange={(event) => setEmail(event.target.value)} />
+            <label>Email:
+                <input onChange={(event)=> setEmail(event.target.value)} />
             </label>
             <br></br>
 
-            <label> Password:<br></br>
-                <input onChange={(event) => setPassword(event.target.value)} />
+            <label>Password:
+                <input onChange={(event)=> setPassword(event.target.value)} />
             </label>
-            <br></br><br></br>
-            <button type='submit'>Click here to login</button>
+            <br></br>
+            <button type="password">Click here to login</button>
         </form>
     )
 }
