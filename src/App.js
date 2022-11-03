@@ -6,7 +6,7 @@ import Cats from "./pages/Cats";
 import Checkout from "./pages/Checkout";
 // import Header from './pages/Components/Sidebar';
 // import form
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Register from "./pages/Components/Register";
 import DeleteTheUser from "./pages/Components/DeleteTheUser";
 import ReadUsers from "./pages/Components/ReadUsers";
@@ -15,8 +15,7 @@ import UpdateUser from "./pages/Components/UpdateUser";
 import DeleteUser from "./pages/Components/DeleteUser";
 import Login from "./pages/Components/Login";
 import { getCookie } from "./pages/common"
-import {findUser} from "./pages/common"
-import { useRef } from "react";
+import {findUser} from "./pages/utils"
 
 function clicker() {
     console.log("hello");
@@ -29,16 +28,16 @@ const App = () => {
     const [user, setUser] = useState()
     
     useEffect(() =>{
-        let cookie = getCookie("jwt_token")
-        if (cookie) !== false) {
-            loginWithToken(cookie)
+        let cookie = getCookie('jwt_token')
+        if (cookie !== false) {
+          loginWithToken(cookie)
         }
-    },[])
-
-const loginWithToken = async(cookie)=> {
-    const user = await findUser(cookie)
-    setUser(user)
-}
+      },[])
+    
+      const loginWithToken = async(cookie)=> {
+        const user = await findUser(cookie)
+        setUser(user)
+      }
 
 
     return (
